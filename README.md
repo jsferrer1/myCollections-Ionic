@@ -27,7 +27,7 @@ e) Add Collection Comments
 
 ## File Structure
 
-
+```
 myCollections-Ionic
 +---hooks
 |   \---after_prepare
@@ -51,6 +51,7 @@ myCollections-Ionic
     +---js
     +---lib
     \---templates
+```
 
 
 ## Run Locally
