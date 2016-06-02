@@ -1,0 +1,27 @@
+<ion-view view-title="My Collections To Cash">
+  <ion-content>
+    <div class="card">
+        <div class="item item-divider">
+            Collections on Sale!
+        </div>
+        <!--<div class="item item-thumbnail-left item-text-wrap">-->
+        <ion-list ng-if="loggedIn">
+            <ion-item ng-repeat="collection in collections" href="#/app/collection/{{collection._id}}" class="item-thumbnail-left">
+            <img ng-src="{{collection.image}}" alt="{{collection.name}}">
+            <h2>{{collection.name}} 
+            <span style="font-size:75%">{{collection.price/100 | currency}}</span>
+            <span class="badge badge-assertive">{{collection.label}}</span></h2>
+            <p>{{collection.description}}</p>
+        </ion-list>
+        <ion-list ng-if="!loggedIn">
+            <ion-item ng-repeat="collection in collections" href="#" class="item-thumbnail-left">
+            <img ng-src="{{collection.image}}" alt="{{collection.name}}">
+            <h2>{{collection.name}} 
+            <span style="font-size:75%">{{collection.price/100 | currency}}</span>
+            <span class="badge badge-assertive">{{collection.label}}</span></h2>
+            <p>{{collection.description}}</p>
+        </ion-list>
+        <!--</div>-->
+    </div>
+  </ion-content>
+</ion-view>

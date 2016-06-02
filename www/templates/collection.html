@@ -1,0 +1,44 @@
+<ion-view view-title="Collections">
+   <div class="tabs-striped tabs-color-royal">
+    <ul class="tabs">
+        <li ng-class="{active:isSelected(1)}" class="tab-item">
+            <a ng-click="select(1)">All</a></li>
+        <li ng-class="{active:isSelected(2)}" class="tab-item">
+            <a ng-click="select(2)">Electronics</a></li>
+        <li ng-class="{active:isSelected(3)}" class="tab-item">
+            <a ng-click="select(3)">Automobile</a></li>
+        <li ng-class="{active:isSelected(4)}" class="tab-item">
+            <a  ng-click="select(4)">Home</a></li>
+        <li ng-class="{active:isSelected(5)}" class="tab-item">
+            <a  ng-click="select(5)">Others</a></li>
+    </ul>
+  </div>
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="collection in collections | filter:{category: filtText}" href="#/app/collection/{{collection._id}}" class="item-thumbnail-left">
+        <img ng-src="{{collection.image}}">
+        <h2>{{collection.name}} 
+        <span style="font-size:75%">{{collection.price/100 | currency}}</span>
+        <span class="badge badge-assertive">{{collection.label}}</span></h2>
+        <p>{{collection.description}}</p>
+        <!--
+        <ion-option-button class="button-positive icon ion-social-facebook"
+            ng-click="">
+        </ion-option-button>
+        <ion-option-button class="button-royal icon ion-edit"
+            ng-click="">
+        </ion-option-button>
+        <ion-option-button class="button-balanced icon ion-bag"
+            ng-click="">
+        </ion-option-button>
+        <ion-option-button class="button-calm icon ion-social-euro"
+            ng-click="">
+        </ion-option-button>
+        <ion-option-button class="button-assertive icon ion-close"
+            ng-click="">
+        </ion-option-button>
+        -->
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
